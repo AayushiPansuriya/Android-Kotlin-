@@ -1,0 +1,121 @@
+package com.example.myapplication2
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val fnm:EditText=findViewById(R.id.editTextText)
+        val lnm:EditText=findViewById(R.id.editTextText2)
+
+        val add:Button=findViewById(R.id.add)
+        val sub:Button=findViewById(R.id.sub)
+        val mul:Button=findViewById(R.id.mul)
+        val div:Button=findViewById(R.id.div)
+        val result:TextView=findViewById(R.id.result)
+
+        add.setOnClickListener({
+            val a=fnm.text.toString()
+            val b=lnm.text.toString()
+            val sum=a.toInt()+b.toInt()
+            result.text="Result add:$add"
+        })
+
+        sub.setOnClickListener({
+            val a=fnm.text.toString()
+            val b=lnm.text.toString()
+            val diff=a.toInt()-b.toInt()
+            result.text="Result sub:$sub"
+        })
+
+        mul.setOnClickListener({
+            val a=fnm.text.toString()
+            val b=lnm.text.toString()
+            val mul =a.toInt()*b.toInt()
+            result.text="Result mul:$mul"
+        })
+
+        div.setOnClickListener({
+            val a=fnm.text.toString()
+            val b=lnm.text.toString()
+            val div=a.toInt()/b.toInt()
+            result.text="Result div:$div"
+        })
+    }
+}
+
+
+
+
+
+
+
+
+<Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button1"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="428dp" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="431dp" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="536dp" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button4"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="538dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="119dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="337dp" />
